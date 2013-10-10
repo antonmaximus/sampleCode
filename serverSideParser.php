@@ -5,51 +5,32 @@
 $input=$_GET["input"];
 $callback=$_GET["callback"];
 
+//Clean input
+$input = trim($input);
+$input = preg_replace( '/\s+/', ' ', $input);
 
-//send a "VALID" json file
-$string = file_get_contents("employees2.json"); //only VALID JSON format please.  Check JSONLINT.com
-$stringSample = '{"entries":[{"id": "29","name":"John", "age":"36"},{"id": "30","name":"Jack", "age":"23"}]}';
+//Only use valid JSON format.  Check jsonlint.com for info.
+$string = file_get_contents("characters.json"); 
+$jsonObj = json_decode($string);
 
 
-$jsonOrig = json_decode($string);
-$jsonSample = json_decode($stringSample);
-
-//Create JSON string
-$toPass = "{"; 
-foreach($jsonOrig as $key1 => $val1) {
-    $toPass = $toPass . " ".  $key1 . ": ["; 
-    
-    foreach($jsonOrig->data as $row)
-    {  
-        $fullName = ""; 
-        $testName = "";
-        foreach($row as $key => $val)
-        { 
-            $newVal = ""; 
-            $val = str_replace(" ", "", $val); 
-            if (ctype_digit($val)) {
-                    // Your Convert logic
-                    $newVal = $val; 
-                } else {
-                    // Do not convert print error message
-                    $newVal = "'" . $val . "'"; //add quotes.
-                }
-
-            $fullName = $fullName . " " . $key . ": " .  $newVal . ","; 
-            $testName = $testName . $val . " "; 
-        }
-
-        if (strpos(strtoupper($testName), strtoupper($input)) != false)  {
-            $toPass =  $toPass . " {" . rtrim($fullName, ",") . "},"; 
-        }
+$jsonp = $callback . '({ "data": ['; 
+foreach($jsonObj->data as $row)
+{  
+    $fullname = "";
+    foreach($row as $key => $val)
+    { 
+        $fullname = $fullname . " " . $val;
     }
-    $toPass = rtrim($toPass, ",") . "]"; 
+    
+    //Check if input exists: 
+    $fullname = trim($fullname);
+    if (strpos(strtoupper($fullname), strtoupper($input)) !== false)  {
+        $jsonp = $jsonp . '{"fullname":"' . $fullname . '"},';
+    }
+
 }
- $toPass = rtrim($toPass, ",") . "}"; 
-
-echo $toPass; 
-//echo $string; 
-
-
-
+$jsonp = rtrim($jsonp, ",") . "]});";  //remove trailing comma and close brackets
+echo $jsonp;
 ?>
+

@@ -2,91 +2,98 @@
     "data": [
         {
             "first": "Luke",
-            "last": "Skywalker"
+            "second": "Skywalker"
+        },
+        {
+            "first": "Other",
+            "second": "Skywalker"
         },
         {
             "first": "Han",
-            "last": "Solo"
+            "second": "Solo"
         },
         {
-            "first": "Princess Leia",
-            "last": "Organa"
+            "first": "Princess",
+            "second": "Leia",
+            "third": "Organa"
         },
         {
-            "first": "Obi-Wan Ben",
-            "last": "Kenobi"
+            "first": "Obi-Wan",
+            "second": "Ben",
+            "third": "Kenobi"
         },      
         {
-            "first": "Grand Moff",
-            "last": "Tarkin"
+            "first": "Grand",
+            "second": "Moff",
+            "third": "Tarkin"
         },
         {
             "first": "Darth",
-            "last": "Vader"
+            "second": "Vader"
         },
         {
             "first": "C-3PO",
-            "last": ""
+            "second": ""
         },
         {
             "first": "R2-D2",
-            "last": ""
+            "second": ""
         }, 
         {
             "first": "Chewbacca",
-            "last": ""
+            "second": ""
         },
         {
             "first": "Owen",
-            "last": "Lars"
+            "second": "Lars"
         }, 
         {
             "first": "Beru",
-            "last": "Lars"
+            "second": "Lars"
         },
         {
             "first": "Greedo",
-            "last": ""
+            "second": ""
         }, 
         {
             "first": "Lando",
-            "last": "Calrissian"
+            "second": "Calrissian"
         },
         {
             "first": "Yoda",
-            "last": ""
+            "second": ""
         },
         {
             "first": "Boba",
-            "last": "Fett"
+            "second": "Fett"
         },
         {
             "first": "Wedge",
-            "last": "Antilles"
+            "second": "Antilles"
         },
         {
             "first": "Emperor",
-            "last": "Palpatine"
+            "second": "Palpatine"
         },
         {
             "first": "Anakin",
-            "last": "Skywalker"
+            "second": "Skywalker"
         },
         {
             "first": "Admiral",
-            "last": "Piett"
+            "second": "Piett"
         },
         {
             "first": "Wicket",
-            "last": "Ewok"
+            "second": "Ewok"
         },
         {
             "first": "Mon",
-            "last": "Mothma"
+            "second": "Mothma"
         },
         {
             "first": "Jabba the Hutt",
-            "last": ""
+            "second": ""
         }
     ]
 }

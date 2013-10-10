@@ -4,8 +4,7 @@
 // at least 3 characters placed in the input field.  If you need to change the URL path for the GET request
 //  you can update the "url" variable in the "issueGet" function. 
 //
-//  This script will process JSON data per the instruction's format, and it will also process a JSONP format (since 
-//  the server asked for a callback function).  
+//  This script will process JSON data and it will also process a JSONP format.
 //
 //   Furthermore, the server is expected to return results that correctly match the input key.  Hence, parsing for matches
 //   will not be done on the client-side.    
@@ -53,7 +52,7 @@ function qualifyData(jsonObj) {
         
     //This for-loop loads the JSON data to an array.
     for (i = 0; i < jsonObj.data.length; i += 1) {
-        searchResults.push(jsonObj.data[i].first + " " + jsonObj.data[i].last);  //Title Case
+        searchResults.push(jsonObj.data[i].fullname);  //Title Case
     }
     clearItems();
     updateItems(searchResults);

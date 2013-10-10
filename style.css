@@ -8,8 +8,6 @@ body {
 	
 .mainHeader {
     height: 63px; 
-    width: 1024px;
-    margin: 0 auto; 
     font-size: 17px; 
     font-family: arial; 
     color: #858788;
@@ -26,6 +24,11 @@ body {
     background: -ms-linear-gradient(top, #5b6065, #1e242a);
     /* Opera 11.10+ */
     background: -o-linear-gradient(top, #5b6065, #1e242a);
+}
+
+.headerItems {
+    width: 1024px;
+    margin: 0 auto; 
 }
 
 .mainHeader img {
