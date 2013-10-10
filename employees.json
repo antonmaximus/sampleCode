@@ -1,0 +1,6 @@
+{
+    data:[
+        { first : 'John', last: 'Doe', employeeID: 101},
+        { first : 'Jane', last: 'Doe', employeeID: 103}
+    ]
+}
