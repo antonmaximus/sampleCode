@@ -26,7 +26,7 @@ function clearItems() {
 // Handle clicked <li>
 function itemSelection(e) {
     var clickedItem = e.target.innerHTML;
-    document.getElementById("employeeName").value = clickedItem;
+    document.getElementById("characterName").value = clickedItem;
     clearItems();
 }
 
@@ -60,7 +60,7 @@ function qualifyData(jsonObj) {
 
 function issueGet() {  //We issue a GET request if there's 3 or more characters only.
     var key, callbackName, parameters, url, text, injectScript, jsonObj, ul, li;
-    key = document.getElementById("employeeName").value;
+    key = document.getElementById("characterName").value;
     if (key.length < 3) {
         clearItems();
     } else { 
@@ -110,5 +110,5 @@ function userIsTyping() {   //Delay the request if the user is continuously typi
 
 
 // add event listener to input field
-var inputListener = document.getElementById("employeeName");
+var inputListener = document.getElementById("characterName");
 inputListener.addEventListener("keyup", userIsTyping, false);
